@@ -7,7 +7,7 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
 
-/* Para agregar más APIs asegurate de poner global.apiname = ['APIKey'] */ /* By Skid 🤑 */
+/* Para agregar más APIs asegurate de poner global.apiname = ['APIKey'] */
 
 global.openai_key = 'sk-0';
 /* Obtén tu API Key en este enlace: https://platform.openai.com/account/api-keys */
