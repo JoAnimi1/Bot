@@ -2,9 +2,6 @@
 
 .github
 node_modules
-MysticSession
-tmp
-jadibts
 pluginpilot
 plugins/supersecretlistener.js
 datasecret
