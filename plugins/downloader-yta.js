@@ -3,7 +3,6 @@ import fetch from 'node-fetch';
 import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import axios from 'axios'
-import {bestFormat, getUrlDl} from '../lib/y2dl.js';
 import _translate from "./_translate.js"
 const tradutor = _translate.plugins.downloader_yta
 
