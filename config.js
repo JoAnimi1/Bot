@@ -15,10 +15,10 @@ global.owner = [
   ['5218442286089', '💫 Mystic - Collaborator 4 💫', true],
   ['50246028932', '💫 Mystic - Collaborator 5 💫', true],
   ['5212412377467', '💫 Mystic - Collaborator 6 💫', true],
-  ['5215517489568', '💫 Mystic - Rey Endymion 💫', false],
+  ['5215517489568', '💫 Mystic - ReyEndymion 💫', false],
   ['59895555511', '💫 Mystic - Collaborator 8 💫', true],
-  ['59177601773', '💫 Mystic - By Alba070503 💫', true],
-  ['393518398856','💫 Mystic - Tester Fabri115💫', true],
+  ['59177601773', '💫 Mystic - Alba070503 💫', true],
+  ['393518398856','💫 Mystic - Fabri115💫', true],
   ['593968585283'],
   ['5219993404349'],
   ['5219991402134'],
@@ -49,7 +49,7 @@ global.titulowm2 = 'The Mystic - Bot';
 
 global.wait = '*[ ⏳ ] Cargando...*';
 
-global.imagen1 = 'https://grxcwmcwbxwj.objectstorage.sa-saopaulo-1.oci.customer-oci.com/n/grxcwmcwbxwj/b/themystic-bot/o/logos%2Flogo2.png';
+global.imagen1 = 'https://grxcwmcwbxwj.objectstorage.sa-saopaulo-1.oci.customer-oci.com/n/grxcwmcwbxwj/b/themystic-bot/o/logos%2Flogo2.jpg';
 global.imagen2 = fs.readFileSync('./src/anime.jpg');
 global.imagen4 = 'https://grxcwmcwbxwj.objectstorage.sa-saopaulo-1.oci.customer-oci.com/n/grxcwmcwbxwj/b/themystic-bot/o/logos%2Flogo.png';
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
@@ -94,6 +94,6 @@ global.flaaa = [
 const file = fileURLToPath(import.meta.url);
 watchFile(file, () => {
   unwatchFile(file);
-  console.log(chalk.redBright('Update \'config.js\''));
+  console.log(chalk.redBright('Se actualizó el archivo \'config.js\''));
   import(`${file}?update=${Date.now()}`);
 });

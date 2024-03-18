@@ -1,49 +1,37 @@
-import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
   try {
     const pp = imagen4;
-    // let vn = './media/menu.mp3'
-    const img = './Menu2.jpg';
-    const d = new Date(new Date + 3600000);
-    const locale = 'es-ES';
-    const week = d.toLocaleDateString(locale, {weekday: 'long'});
-    const date = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', year: 'numeric'});
-    const _uptime = process.uptime() * 1000;
-    const uptime = clockString(_uptime);
     const user = global.db.data.users[m.sender];
     const {money, joincount} = global.db.data.users[m.sender];
     const {exp, limit, level, role} = global.db.data.users[m.sender];
-    const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
-    const rtotal = Object.entries(global.db.data.users).length || '0'
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-    const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
-    const document = doc[Math.floor(Math.random() * doc.length)];
+
     const str = `𝙏𝙃𝙀 𝙈𝙔𝙎𝙏𝙄𝘾 - 𝘽𝙊𝙏
 
  ▢ *Hola,* ${taguser}
 
  _*< TUS ESTADÍSTICAS />*_
 
- ▢ *Nivel:* ${level}
- ▢ *Experiencia:* ${exp}
- ▢ *Rango:* ${role}
- ▢ *Diamantes:* ${limit}
- ▢ *MysticCoins:* ${money}
- ▢ *Tokens:* ${joincount}
- ▢ *Premium:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
+  ▢ *Nivel:* ${level}
+  ▢ *Experiencia:* ${exp}
+  ▢ *Rango:* ${role}
+  ▢ *Diamantes:* ${limit}
+  ▢ *MysticCoins:* ${money}
+  ▢ *Tokens:* ${joincount}
+  ▢ *Premium:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
  ${readMore}
 
-  _*< LISTA DE MENUS />*_
+  _*< MENUS ADICIONALES />*_
   
   ▢ _${usedPrefix}menuaudios_
   ▢ _${usedPrefix}menuanimes_
   ▢ _${usedPrefix}labiblia_ (🔞)
 
  
- _*< SOBRE EL BOT />*_
+ _*< BOT />*_
 
   ▢ _${usedPrefix}terminosycondiciones_
   ▢ _${usedPrefix}grupos_
@@ -53,8 +41,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   ▢ _${usedPrefix}donar_
   ▢ _${usedPrefix}owner_
   ▢ _${usedPrefix}script_
-  ▢ _${usedPrefix}reporte *<txt>*_
-  ▢ _${usedPrefix}join *<wagp_url>*_
+  ▢ _${usedPrefix}reporte_
+  ▢ _${usedPrefix}join_
   ▢ _${usedPrefix}fixmsgespera_
   ▢ _bot_ (sin prefijo)
 
@@ -86,30 +74,30 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
  _*< JUEGOS />*_
 
-  ▢ _${usedPrefix}mates *<noob / easy / medium / hard / extreme /impossible /impossible2>*_
-  ▢ _${usedPrefix}fake *<txt1> <@tag> <txt2>*_
-  ▢ _${usedPrefix}ppt *<papel / tijera /piedra>*_
-  ▢ _${usedPrefix}prostituto *<nombre / @tag>*_
-  ▢ _${usedPrefix}prostituta *<nombre / @tag>*_
-  ▢ _${usedPrefix}gay2 *<nombre / @tag>*_
-  ▢ _${usedPrefix}lesbiana *<nombre / @tag>*_
-  ▢ _${usedPrefix}pajero *<nombre / @tag>*_
-  ▢ _${usedPrefix}pajera *<nombre / @tag>*_
-  ▢ _${usedPrefix}puto *<nombre / @tag>*_
-  ▢ _${usedPrefix}puta *<nombre / @tag>*_
-  ▢ _${usedPrefix}manco *<nombre / @tag>*_
-  ▢ _${usedPrefix}manca *<nombre / @tag>*_
-  ▢ _${usedPrefix}rata *<nombre / @tag>*_
-  ▢ _${usedPrefix}love *<nombre / @tag>*_
-  ▢ _${usedPrefix}doxear *<nombre / @tag>*_
-  ▢ _${usedPrefix}pregunta *<txt>*_
-  ▢ _${usedPrefix}suitpvp *<@tag>*_
+  ▢ _${usedPrefix}mates_
+  ▢ _${usedPrefix}fake_
+  ▢ _${usedPrefix}ppt_
+  ▢ _${usedPrefix}prostituto_
+  ▢ _${usedPrefix}prostituta_
+  ▢ _${usedPrefix}gay2_
+  ▢ _${usedPrefix}lesbiana_
+  ▢ _${usedPrefix}pajero_
+  ▢ _${usedPrefix}pajera_
+  ▢ _${usedPrefix}puto_
+  ▢ _${usedPrefix}puta_
+  ▢ _${usedPrefix}manco_
+  ▢ _${usedPrefix}manca_
+  ▢ _${usedPrefix}rata_
+  ▢ _${usedPrefix}love_
+  ▢ _${usedPrefix}doxear_
+  ▢ _${usedPrefix}pregunta_
+  ▢ _${usedPrefix}suitpvp_
   ▢ _${usedPrefix}slot *<apuesta>*_
   ▢ _${usedPrefix}ttt *<nombre sala>*_
   ▢ _${usedPrefix}delttt_
   ▢ _${usedPrefix}acertijo_
-  ▢ _${usedPrefix}simi *<txt>*_
-  ▢ _${usedPrefix}top *<txt>*_
+  ▢ _${usedPrefix}simi_
+  ▢ _${usedPrefix}top_
   ▢ _${usedPrefix}topgays_
   ▢ _${usedPrefix}topotakus_
   ▢ _${usedPrefix}formarpareja_
@@ -155,111 +143,108 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
  _*< DESCARGAS />*_
 
- ▢ _${usedPrefix}play *<txt>*_
- ▢ _${usedPrefix}play2 *<txt>*_
- ▢ _${usedPrefix}play.1 *<txt>*_
- ▢ _${usedPrefix}play.2 *<txt>*_
- ▢ _${usedPrefix}playdoc *<txt>*_
- ▢ _${usedPrefix}playdoc2 *<txt>*_
- ▢ _${usedPrefix}playlist *<txt>*_
- ▢ _${usedPrefix}ytshort *<url>*_
- ▢ _${usedPrefix}ytmp3 *<url>*_
- ▢ _${usedPrefix}ytmp3doc *<url>*_
- ▢ _${usedPrefix}ytmp4 *<url>*_
- ▢ _${usedPrefix}ytmp4doc *<url>*_
- ▢ _${usedPrefix}videodoc *<url>*_
- ▢ _${usedPrefix}spotify *<txt>*_
- ▢ _${usedPrefix}facebook *<url>*_
- ▢ _${usedPrefix}instagram *<url>*_
- ▢ _${usedPrefix}igstory *<usr>*_
- ▢ _${usedPrefix}tiktok *<url>*_
- ▢ _${usedPrefix}tiktokimg *<url>*_
- ▢ _${usedPrefix}pptiktok *<usr>*_
- ▢ _${usedPrefix}mediafire *<url>*_ 
- ▢ _${usedPrefix}pinterest *<txt>*_
- ▢ _${usedPrefix}gitclone *<url>*_
- ▢ _${usedPrefix}gdrive *<url>*_
- ▢ _${usedPrefix}twitter *<url>*_
- ▢ _${usedPrefix}ringtone *<txt>*_
- ▢ _${usedPrefix}soundcloud *<txt>*_
- ▢ _${usedPrefix}stickerpack *<url>*_
- ▢ _${usedPrefix}wallpaper *<txt>*_ 
- ▢ _${usedPrefix}dapk2 *<url>*_
- ▢ _${usedPrefix}xnxxdl *<url>*_ (🔞)
- ▢ _${usedPrefix}xvideosdl *<url>*_ (🔞)
+  ▢ _${usedPrefix}play_
+  ▢ _${usedPrefix}play2_
+  ▢ _${usedPrefix}play.1_
+  ▢ _${usedPrefix}play.2_
+  ▢ _${usedPrefix}playdoc_
+  ▢ _${usedPrefix}playdoc2_
+  ▢ _${usedPrefix}playlist_
+  ▢ _${usedPrefix}ytshort_
+  ▢ _${usedPrefix}ytmp3_
+  ▢ _${usedPrefix}ytmp3doc_
+  ▢ _${usedPrefix}ytmp4_
+  ▢ _${usedPrefix}ytmp4doc_
+  ▢ _${usedPrefix}videodoc_
+  ▢ _${usedPrefix}spotify_
+  ▢ _${usedPrefix}facebook_
+  ▢ _${usedPrefix}instagram_
+  ▢ _${usedPrefix}igstory_
+  ▢ _${usedPrefix}tiktok_
+  ▢ _${usedPrefix}tiktokimg_
+  ▢ _${usedPrefix}pptiktok_
+  ▢ _${usedPrefix}mediafire_ 
+  ▢ _${usedPrefix}pinterest_
+  ▢ _${usedPrefix}gitclone_
+  ▢ _${usedPrefix}gdrive_
+  ▢ _${usedPrefix}twitter_
+  ▢ _${usedPrefix}ringtone_
+  ▢ _${usedPrefix}soundcloud_
+  ▢ _${usedPrefix}stickerpack_
+  ▢ _${usedPrefix}wallpaper_ 
+  ▢ _${usedPrefix}dapk2_
+  ▢ _${usedPrefix}xnxxdl_ (🔞)
+  ▢ _${usedPrefix}xvideosdl_ (🔞)
 
 
  _*< BUSCADORES />*_
 
-  ▢ _${usedPrefix}githubsearch *<txt>*_
-  ▢ _${usedPrefix}pelisplus *<txt>*_
-  ▢ _${usedPrefix}modapk *<txt>*_
-  ▢ _${usedPrefix}stickersearch *<txt>*_
-  ▢ _${usedPrefix}stickersearch2 *<txt>*_
-  ▢ _${usedPrefix}xnxxsearch *<txt>*_
-  ▢ _${usedPrefix}animeinfo *<txt>*_
-  ▢ _${usedPrefix}google *<txt>*_
-  ▢ _${usedPrefix}letra *<txt>*_
-  ▢ _${usedPrefix}wikipedia *<txt>*_
-  ▢ _${usedPrefix}ytsearch *<txt>*_
-  ▢ _${usedPrefix}playstore *<txt>*_
+  ▢ _${usedPrefix}githubsearch_
+  ▢ _${usedPrefix}pelisplus_
+  ▢ _${usedPrefix}modapk_
+  ▢ _${usedPrefix}stickersearch_
+  ▢ _${usedPrefix}stickersearch2_
+  ▢ _${usedPrefix}xnxxsearch_
+  ▢ _${usedPrefix}animeinfo_
+  ▢ _${usedPrefix}google_
+  ▢ _${usedPrefix}letra_
+  ▢ _${usedPrefix}wikipedia_
+  ▢ _${usedPrefix}ytsearch_
+  ▢ _${usedPrefix}playstore_
 
 
  _*< GRUPOS />*_
 
-  ▢ _${usedPrefix}add *num>*_
-  ▢ _${usedPrefix}kick *<@tag>*_
-  ▢ _${usedPrefix}kick2 *<@tag>*_
-  ▢ _${usedPrefix}listanum *<txt>*_
-  ▢ _${usedPrefix}kicknum *<txt>*_
-  ▢ _${usedPrefix}grupo *<abrir/cerrar>*_
-  ▢ _${usedPrefix}grouptime *<opcion> <tiempo>*_
-  ▢ _${usedPrefix}promote *<@tag>*_
-  ▢ _${usedPrefix}demote *<@tag>*_
+  ▢ _${usedPrefix}add_
+  ▢ _${usedPrefix}kick_
+  ▢ _${usedPrefix}kick2_
+  ▢ _${usedPrefix}listanum_
+  ▢ _${usedPrefix}kicknum_
+  ▢ _${usedPrefix}grupo_
+  ▢ _${usedPrefix}grouptime_
+  ▢ _${usedPrefix}promote_
+  ▢ _${usedPrefix}demote_
   ▢ _${usedPrefix}infogroup_
   ▢ _${usedPrefix}resetlink_
   ▢ _${usedPrefix}link_
-  ▢ _${usedPrefix}setname *<txt>*_
-  ▢ _${usedPrefix}setdesc *<txt>*_
-  ▢ _${usedPrefix}invocar *<txt>*_
-  ▢ _${usedPrefix}setwelcome *<txt>*_
-  ▢ _${usedPrefix}setbye *<txt>*_
-  ▢ _${usedPrefix}hidetag *<txt>*_
-  ▢ _${usedPrefix}hidetag *<audio>*_
-  ▢ _${usedPrefix}hidetag *<video>*_
-  ▢ _${usedPrefix}hidetag *<img>*_
-  ▢ _${usedPrefix}warn *<@tag>*_
-  ▢ _${usedPrefix}unwarn *<@tag>*_
+  ▢ _${usedPrefix}setname_
+  ▢ _${usedPrefix}setdesc_
+  ▢ _${usedPrefix}invocar_
+  ▢ _${usedPrefix}setwelcome_
+  ▢ _${usedPrefix}setbye_
+  ▢ _${usedPrefix}hidetag_
+  ▢ _${usedPrefix}warn_
+  ▢ _${usedPrefix}unwarn_
   ▢ _${usedPrefix}listwarn_
   ▢ _${usedPrefix}fantasmas_
   ▢ _${usedPrefix}destraba_
-  ▢ _${usedPrefix}setpp *<img>*_
-  ▢ _admins *<txt>*_ (sin prefijo)
+  ▢ _${usedPrefix}setpp_
+  ▢ _admins_ (sin prefijo)
 
 
  _*< CONVERTIDORES />*_
 
-  ▢ _${usedPrefix}toanime *<img>*_
-  ▢ _${usedPrefix}togifaud *<video>*_
-  ▢ _${usedPrefix}toimg *<sticker>*_
-  ▢ _${usedPrefix}tomp3 *<video>*_
-  ▢ _${usedPrefix}tomp3 *<nota de voz>*_
-  ▢ _${usedPrefix}toptt *<video / audio>*_
-  ▢ _${usedPrefix}tovideo *<sticker>*_
-  ▢ _${usedPrefix}tourl *<video / img / audio>*_
-  ▢ _${usedPrefix}tts *<idioma> <txt>*_
-  ▢ _${usedPrefix}tts *<efecto> <txt>*_
+  ▢ _${usedPrefix}toanime_
+  ▢ _${usedPrefix}togifaud_
+  ▢ _${usedPrefix}toimg_
+  ▢ _${usedPrefix}tomp3_
+  ▢ _${usedPrefix}tomp3_
+  ▢ _${usedPrefix}toptt_
+  ▢ _${usedPrefix}tovideo_
+  ▢ _${usedPrefix}tourl_
+  ▢ _${usedPrefix}tts_
+  ▢ _${usedPrefix}tts_
 
 
  _*< EFECTOS & LOGOS />*_
 
-  ▢ _${usedPrefix}logos *<efecto> <txt>*_
-  ▢ _${usedPrefix}logochristmas *<txt>*_
-  ▢ _${usedPrefix}logocorazon *<txt>*_
-  ▢ _${usedPrefix}ytcomment *<txt>*_
-  ▢ _${usedPrefix}hornycard *<@tag>*_
-  ▢ _${usedPrefix}simpcard *<@tag>*_
-  ▢ _${usedPrefix}lolice *<@tag>*_
+  ▢ _${usedPrefix}logos_
+  ▢ _${usedPrefix}logochristmas_
+  ▢ _${usedPrefix}logocorazon_
+  ▢ _${usedPrefix}ytcomment_
+  ▢ _${usedPrefix}hornycard_
+  ▢ _${usedPrefix}simpcard_
+  ▢ _${usedPrefix}lolice_
   ▢ _${usedPrefix}itssostupid_
   ▢ _${usedPrefix}pixelar_
   ▢ _${usedPrefix}blur_
@@ -275,7 +260,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
  _*< ALEATORIO />*_
 
-  ▢ _${usedPrefix}kpop *<blackpink/exo/bts>*_
+  ▢ _${usedPrefix}kpop_
   ▢ _${usedPrefix}cristianoronaldo_
   ▢ _${usedPrefix}messi_
   ▢ _${usedPrefix}cat_
@@ -331,35 +316,34 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
  _*< HERRAMIENTAS />*_
  
-  ▢ _${usedPrefix}inspect *<wagc_url>*_
-  ▢ _${usedPrefix}chatgpt *<txt>*_
+  ▢ _${usedPrefix}inspect_
+  ▢ _${usedPrefix}chatgpt_
   ▢ _${usedPrefix}delchatgpt
-  ▢ _${usedPrefix}gptvoz *<txt>*_
-  ▢ _${usedPrefix}dall-e *<txt>*_
-  ▢ _${usedPrefix}spamwa *num|txt|cant>*_
-  ▢ _${usedPrefix}tamaño *<cant> <img / video>*_
-  ▢ _${usedPrefix}readviewonce *<img / video>*_
-  ▢ _${usedPrefix}clima *<país> <ciudad>*_
-  ▢ _${usedPrefix}encuesta *<txt1|txt2>*_
-  ▢ _${usedPrefix}afk *<motivo>*_
-  ▢ _${usedPrefix}ocr *<responde a img>*_
-  ▢ _${usedPrefix}hd *<responde a img>*_
-  ▢ _${usedPrefix}acortar *<url>*_
-  ▢ _${usedPrefix}calc *<operacion>*_
-  ▢ _${usedPrefix}del *<msj>*_
-  ▢ _${usedPrefix}whatmusic *<audio>*_
-  ▢ _${usedPrefix}readqr *<img>*_
-  ▢ _${usedPrefix}qrcode *<txt>*_
-  ▢ _${usedPrefix}readmore *<txt1|txt2>*_
-  ▢ _${usedPrefix}styletext *<txt>*_
-  ▢ _${usedPrefix}traducir *<txt>*_
-  ▢ _${usedPrefix}nowa *num>*_
-  ▢ _${usedPrefix}covid *<pais>*_
+  ▢ _${usedPrefix}gptvoz_
+  ▢ _${usedPrefix}dall-e_
+  ▢ _${usedPrefix}spamwa_
+  ▢ _${usedPrefix}tamaño_
+  ▢ _${usedPrefix}readviewonce_
+  ▢ _${usedPrefix}clima_
+  ▢ _${usedPrefix}encuesta_
+  ▢ _${usedPrefix}afk_
+  ▢ _${usedPrefix}ocr_
+  ▢ _${usedPrefix}hd_
+  ▢ _${usedPrefix}acortar_
+  ▢ _${usedPrefix}calc_
+  ▢ _${usedPrefix}del_
+  ▢ _${usedPrefix}whatmusic_
+  ▢ _${usedPrefix}readqr_
+  ▢ _${usedPrefix}qrcode_
+  ▢ _${usedPrefix}readmore_
+  ▢ _${usedPrefix}styletext_
+  ▢ _${usedPrefix}traducir_
+  ▢ _${usedPrefix}nowa_
   ▢ _${usedPrefix}horario_
   ▢ _${usedPrefix}dropmail_
-  ▢ _${usedPrefix}igstalk *<usr>*_
-  ▢ _${usedPrefix}tiktokstalk *<usr>*_
-  ▢ _${usedPrefix}img *<txt>*_
+  ▢ _${usedPrefix}igstalk_
+  ▢ _${usedPrefix}tiktokstalk_
+  ▢ _${usedPrefix}img_
 
 
  _*< ECONOMÍA />*_
@@ -380,40 +364,37 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   ▢ _${usedPrefix}buy_
   ▢ _${usedPrefix}buyall_
   ▢ _${usedPrefix}verificar_
-  ▢ _${usedPrefix}robar *<cant> <@tag>*_
+  ▢ _${usedPrefix}robar_
   ▢ _${usedPrefix}crime
-  ▢ _${usedPrefix}transfer *<tipo> <cant> <@tag>*_
-  ▢ _${usedPrefix}unreg *<sn>*_
+  ▢ _${usedPrefix}transfer_
+  ▢ _${usedPrefix}unreg*_
 
 
  _*< STICKERS />*_
 
-  ▢ _${usedPrefix}sticker *<responder a img o video>*_
-  ▢ _${usedPrefix}sticker *<url>*_
-  ▢ _${usedPrefix}sticker2 *<responder a img o video>*_
-  ▢ _${usedPrefix}sticker2 *<url>*_
-  ▢ _${usedPrefix}s *<responder a img o video>*_
-  ▢ _${usedPrefix}s *<url>*_
-  ▢ _${usedPrefix}emojimix *<emoji 1>&<emoji 2>*_
-  ▢ _${usedPrefix}scircle *<img>*_
-  ▢ _${usedPrefix}sremovebg *<img>*_
-  ▢ _${usedPrefix}semoji *<tipo> <emoji>*_
-  ▢ _${usedPrefix}qc *<txt>*_
-  ▢ _${usedPrefix}attp *<txt>*_
-  ▢ _${usedPrefix}attp2 *<txt>*_
-  ▢ _${usedPrefix}attp3 *<txt>*_
-  ▢ _${usedPrefix}ttp *<txt>*_
-  ▢ _${usedPrefix}ttp2 *<txt>*_
-  ▢ _${usedPrefix}ttp3 *<txt>*_
-  ▢ _${usedPrefix}ttp4 *<txt>*_
-  ▢ _${usedPrefix}ttp5 *<txt>*_
-  ▢ _${usedPrefix}pat *<@tag>*_
-  ▢ _${usedPrefix}slap *<@tag>*_
-  ▢ _${usedPrefix}kiss *<@tag>*_
+  ▢ _${usedPrefix}sticker_
+  ▢ _${usedPrefix}sticker2_
+  ▢ _${usedPrefix}s_
+  ▢ _${usedPrefix}emojimix_
+  ▢ _${usedPrefix}scircle_
+  ▢ _${usedPrefix}sremovebg_
+  ▢ _${usedPrefix}semoji_
+  ▢ _${usedPrefix}qc_
+  ▢ _${usedPrefix}attp_
+  ▢ _${usedPrefix}attp2_
+  ▢ _${usedPrefix}attp3_
+  ▢ _${usedPrefix}ttp_
+  ▢ _${usedPrefix}ttp2_
+  ▢ _${usedPrefix}ttp3_
+  ▢ _${usedPrefix}ttp4_
+  ▢ _${usedPrefix}ttp5_
+  ▢ _${usedPrefix}pat_
+  ▢ _${usedPrefix}slap_
+  ▢ _${usedPrefix}kiss_
   ▢ _${usedPrefix}dado_
-  ▢ _${usedPrefix}wm *<packname> <autor>*_
-  ▢ _${usedPrefix}stickermarker *<efecto> <img>*_
-  ▢ _${usedPrefix}stickerfilter *<efecto> <img>*_
+  ▢ _${usedPrefix}wm_
+  ▢ _${usedPrefix}stickermarker_
+  ▢ _${usedPrefix}stickerfilter_
 
 
  _*< PROPIETARIO Y MODS. />*_
@@ -422,7 +403,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   ▢ _=> *<funcion>*_
   ▢ _$ *<funcion>*_
   ▢ _${usedPrefix}dsowner_
-  ▢ _${usedPrefix}setprefix *<prefijo>*_
+  ▢ _${usedPrefix}setprefix_
   ▢ _${usedPrefix}resetprefix_
   ▢ _${usedPrefix}autoadmin_
   ▢ _${usedPrefix}grouplist_
@@ -430,10 +411,10 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   ▢ _${usedPrefix}leavegc_
   ▢ _${usedPrefix}cajafuerte_
   ▢ _${usedPrefix}blocklist_
-  ▢ _${usedPrefix}addowner *<@tag / num>*_
-  ▢ _${usedPrefix}delowner *<@tag / num>*_
-  ▢ _${usedPrefix}block *<@tag / num>*_
-  ▢ _${usedPrefix}unblock *<@tag / num>*_
+  ▢ _${usedPrefix}addowner_
+  ▢ _${usedPrefix}delowner_
+  ▢ _${usedPrefix}block_
+  ▢ _${usedPrefix}unblock_
   ▢ _${usedPrefix}enable *restrict*_
   ▢ _${usedPrefix}disable *restrict*_
   ▢ _${usedPrefix}enable *autoread*_
@@ -454,34 +435,34 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   ▢ _${usedPrefix}disable *audios_bot*_
   ▢ _${usedPrefix}enable *antispam*_
   ▢ _${usedPrefix}disable *antispam*_
-  ▢ _${usedPrefix}msg *<txt>*_
+  ▢ _${usedPrefix}msg_
   ▢ _${usedPrefix}banchat_
   ▢ _${usedPrefix}unbanchat_
-  ▢ _${usedPrefix}resetuser *<@tag>*_
-  ▢ _${usedPrefix}banuser *<@tag>*_
-  ▢ _${usedPrefix}unbanuser *<@tag>*_
-  ▢ _${usedPrefix}dardiamantes *<@tag> <cant>*_
-  ▢ _${usedPrefix}añadirxp *<@tag> <cant>*_
-  ▢ _${usedPrefix}banuser *<@tag>*_
-  ▢ _${usedPrefix}bc *<txt>*_
-  ▢ _${usedPrefix}bcchats *<txt>*_
-  ▢ _${usedPrefix}bcgc *<txt>*_
-  ▢ _${usedPrefix}bcgc2 *<aud>*_
-  ▢ _${usedPrefix}bcgc2 *<vid>*_
-  ▢ _${usedPrefix}bcgc2 *<img>*_
-  ▢ _${usedPrefix}bcbot *<txt>*_
+  ▢ _${usedPrefix}resetuser_
+  ▢ _${usedPrefix}banuser_
+  ▢ _${usedPrefix}unbanuser_
+  ▢ _${usedPrefix}dardiamantes_
+  ▢ _${usedPrefix}añadirxp_
+  ▢ _${usedPrefix}banuser_
+  ▢ _${usedPrefix}bc_
+  ▢ _${usedPrefix}bcchats_
+  ▢ _${usedPrefix}bcgc_
+  ▢ _${usedPrefix}bcgc2_
+  ▢ _${usedPrefix}bcgc2_
+  ▢ _${usedPrefix}bcgc2_
+  ▢ _${usedPrefix}bcbot_
   ▢ _${usedPrefix}cleartpm_
   ▢ _${usedPrefix}restart_
   ▢ _${usedPrefix}update_
   ▢ _${usedPrefix}banlist_
-  ▢ _${usedPrefix}addprem *<@tag> <tiempo>*_
-  ▢ _${usedPrefix}addprem2 *<@tag> <tiempo>*_
-  ▢ _${usedPrefix}addprem3 *<@tag> <tiempo>*_
-  ▢ _${usedPrefix}addprem4 *<@tag> <tiempo>*_
-  ▢ _${usedPrefix}delprem *<@tag>*_
+  ▢ _${usedPrefix}addprem_
+  ▢ _${usedPrefix}addprem2_
+  ▢ _${usedPrefix}addprem3_
+  ▢ _${usedPrefix}addprem4_
+  ▢ _${usedPrefix}delprem_
   ▢ _${usedPrefix}listcmd_
-  ▢ _${usedPrefix}setppbot *<responder a img>*_
-  ▢ _${usedPrefix}addcmd *<txt>*_
+  ▢ _${usedPrefix}setppbot_
+  ▢ _${usedPrefix}addcmd_
   ▢ _${usedPrefix}delcmd_
   ▢ _${usedPrefix}saveimage_
   ▢ _${usedPrefix}viewimage_`.trim();
@@ -495,7 +476,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
       conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
     }
   } catch {
-    conn.reply(m.chat, '*[ ℹ️ ] Este menu tiene un error interno, por lo cual no fue posible enviarlo.*', m);
+    conn.reply(m.chat, '_*< MENU />*_\n\n*[ ℹ️ ] Este menu tiene un error interno, por lo cual no fue posible enviarlo.*', m);
   }
 };
 handler.command = /^(menu|menú|memu|memú|help|info|comandos|allmenu|2help|menu1.2|ayuda|commands|commandos|cmd)$/i;
