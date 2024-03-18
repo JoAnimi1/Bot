@@ -1,5 +1,4 @@
-const axios = require('axios');
-const fs = require('fs');
+import axios from 'axios';
 
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
