@@ -4,21 +4,14 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
-  'drawing':'‎ ترفيه أوامر' ,
-  'applications':'‎ أوامر التطبيقات‎',
-  'drawing':'‎ توليد الصور‎ أوامر' ,
+  'morocco':'  ‎أوامر للمغاربة',
   'ai':'‎ الذكاء الاصطناعي‎ أوامر',
   'infobot':'‎ معلومات البوت‎',
   'downloader':'‎ أوامر التحميلات',
   'anime':'‎ أوامر عن  الأنيم',
-  'islam':'‎ الدين هو الاسلام‎',
   'owner':'‎ اوامر صاحب البوت',
   'search':'‎ أوامر البحث',
-  'audio-changer':'‎ تعديل الصوتيات‎',
   'sticker':'‎ أوامر الملصقات',
-  'image-edit':'‎ تعديل الصور',
-  'pdf':'‎ pdf ومشتقاته‎',
-  'uploader':'‎‎ رفع الملفات‎',
 }
 const defaultMenu = {
   before: `السلام عليكم 👋. 
@@ -30,9 +23,9 @@ const defaultMenu = {
 %readmore
   ≡ *K I L L U A | M E N U*
 `.trimStart(),
-  header: '~~● *_%category_* ',
-  body: '|⋄ %cmd %isdiamond %isPremium',
-  footer: '~~~~~~~●\n',
+  header: '┏━━⊜ *_%category_* ',
+  body: '┃⋄ %cmd %isdiamond %isPremium',
+  footer: '┗━━━━━━━━⬣\n',
   after: '*إستخدامك للبوت بشكل صحيح يعني أنك تزيد من إحتمالية أن يبقى البوت شغالا لمدة أطول . لذا إن واجهتك أي مشكلة لا تخجل من سؤال صاحب البوت .رقمه سوف تجده في الأسفل *\n+201008599375 واجه  ',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -156,9 +149,9 @@ renderLargerThumbnail: true
     throw e
   }
 }
-handler.help = ['list']
+handler.help = ['menu']
 handler.tags = ['infobot']
-handler.command = ['list','menu','help','اوامر'] 
+handler.command = ['list','menu','help','اوامر']
 handler.register = false
 handler.owner = true
 
