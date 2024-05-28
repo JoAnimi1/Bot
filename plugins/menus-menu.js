@@ -4,7 +4,6 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
-  'morocco':'  ‎أوامر للمغاربة',
   'ai':'‎ الذكاء الاصطناعي‎ أوامر',
   'infobot':'‎ معلومات البوت‎',
   'downloader':'‎ أوامر التحميلات',
@@ -23,9 +22,9 @@ const defaultMenu = {
 %readmore
   ≡ *K I L L U A | M E N U*
 `.trimStart(),
-  header: '┏━━⊜ *_%category_* ',
-  body: '┃⋄ %cmd %isdiamond %isPremium',
-  footer: '┗━━━━━━━━⬣\n',
+  header: '~~● *_%category_* ',
+  body: '| %cmd %isdiamond %isPremium',
+  footer: '~~~~~~~~●\n',
   after: '*إستخدامك للبوت بشكل صحيح يعني أنك تزيد من إحتمالية أن يبقى البوت شغالا لمدة أطول . لذا إن واجهتك أي مشكلة لا تخجل من سؤال صاحب البوت .رقمه سوف تجده في الأسفل *\n+201008599375 واجه  ',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
