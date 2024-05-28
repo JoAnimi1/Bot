@@ -5,20 +5,13 @@ import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
   'drawing':'‎ ترفيه أوامر' ,
-  'applications':'‎ أوامر التطبيقات‎',
-  'drawing':'‎ توليد الصور‎ أوامر' ,
   'ai':'‎ الذكاء الاصطناعي‎ أوامر',
   'infobot':'‎ معلومات البوت‎',
   'downloader':'‎ أوامر التحميلات',
   'anime':'‎ أوامر عن  الأنيم',
-  'islam':'‎ الدين هو الاسلام‎',
   'owner':'‎ اوامر صاحب البوت',
   'search':'‎ أوامر البحث',
-  'audio-changer':'‎ تعديل الصوتيات‎',
   'sticker':'‎ أوامر الملصقات',
-  'image-edit':'‎ تعديل الصور',
-  'pdf':'‎ pdf ومشتقاته‎',
-  'uploader':'‎‎ رفع الملفات‎',
 }
 const defaultMenu = {
   before: `السلام عليكم 👋. 
@@ -156,7 +149,7 @@ renderLargerThumbnail: true
     throw e
   }
 }
-handler.help = ['list']
+handler.help = ['menu']
 handler.tags = ['infobot']
 handler.command = ['list','menu','help','اوامر'] 
 handler.register = false
