@@ -1,4 +1,4 @@
-# `Your Bot ♥ ♥` #
+~ 【𓆩𖤍𓆪𓆩𐂂 الڪٜنترول¹⁰ 𓆩𖤍𓆪】
 
 ------------------
 > **السلام عليكم** هذا هوا افضل اساس لتأسيس بوتك الخاص كل ما عليك هوا ان تعدل على اسم البوت وتضع صور بوتك
@@ -10,9 +10,6 @@
 
 ------------------
 
-### `▢ الدعم`
-
- <a href="https://chat.whatsapp.com/J8tFq87Ia0jEnx20NvCQxN" target="blank"><img src="https://img.shields.io/badge/رقمي اذا احتجت مساعده)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 <a href="https://chat.whatsapp.com/FRkr7jJHSJA5OjVtE64dDs" target="blank"><img src="https://img.shields.io/badge/قناتي ننزل اشياء كثيره)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
