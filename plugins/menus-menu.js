@@ -20,7 +20,7 @@ const defaultMenu = {
 ⏰ *Uptime:* %muptime  
 ┗━━━━━━━━━━⬣
 %readmore
-  ≡ *K I L L U A | M E N U*
+  ≡ *B O T | M E N U*
 `.trimStart(),
   header: '~~● *_%category_* ',
   body: '| %cmd %isdiamond %isPremium',
@@ -152,7 +152,7 @@ handler.help = ['menu']
 handler.tags = ['infobot']
 handler.command = ['list','menu','help','اوامر']
 handler.register = false
-handler.owner = true
+
 
 
 export default handler
